@@ -1,19 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login Page</title>
-</head>
-<body bgcolor="red">
+{% extends "layout.html" %}
 
-<form action="/form_login" method="post">
-  <h2></h2>Username:<br>
-  <input type="text" name='username'><br>
-  Password:<br>
-  <input  name='password' ><br><br>
-<input type="submit" value="Login">
-</form>
-<h1 >{{info}}</h1>
+{% block title %}
+Login
+{% endblock %}
 
-</body>
-</html>
+{% block y %}
+<div class="d-flex flex-column m-5 p-5">
+    <form method="POST">
+        <div class="form-group mt-3">
+            <label for="username">Username : </label>
+            <input type="text" name="username" class="form-control" id="username">
+        </div>
+        <div class="form-group mt-3">
+            <label for="password">Password : </label>
+            <input type="password" name="password" class="form-control" id="password">
+        </div>
+        <button type="submit" class="btn form-control btn-info mt-4">Login</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block y %}
+<div class="d-flex flex-column m-5 p-5 text-center">
+    {% if session.name %}
+    <h2>Welcome {{ session.name }}.</h2>
+    <p>Click to <a href="/logout">logout</a>.</p>
+    {% endif %}
+    <a href="/login" class="btn form-control btn-success m-3 p-3">Login</a>
+    <a href="/register" class="btn form-control btn-primary m-3 p-3">Register</a>
+</div>
+{% endblock %}
